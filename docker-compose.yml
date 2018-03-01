@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: andreformento/app:latest
+    ports:
+      - 8080:8080
