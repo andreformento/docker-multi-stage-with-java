@@ -1,11 +1,11 @@
 version: '2'
 
 services:
-  app:
-    container_name: app
+  backend:
+    container_name: backend
     build:
-      context: .
+      context: backend
       dockerfile: Dockerfile
-    image: andreformento/app:latest
+    image: andreformento/backend:latest
     ports:
       - 8080:8080
