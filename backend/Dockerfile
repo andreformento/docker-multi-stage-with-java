@@ -15,13 +15,13 @@ COPY gradle $APP_HOME/gradle
 # download gradle
 RUN ./gradlew --continue
 
-COPY build.gradle $APP_HOME
-
 # for cache all dependencies
 RUN touch "class GradleCache {}" > $APP_HOME/src/main/java/GradleCache.java
 RUN touch "name=value" > $APP_HOME/src/main/resources/gradlecache.properties
 RUN touch "class GradleCacheTest {}" > $APP_HOME/src/test/java/GradleCacheTest.java
 RUN touch "name=value" > $APP_HOME/src/test/resources/gradlecache.properties
+
+COPY build.gradle $APP_HOME
 
 # download dependencies
 RUN ./gradlew build --continue
