@@ -5,6 +5,10 @@ FROM openjdk:9-slim as build
 ENV APP_HOME=/root/dev/
 
 RUN mkdir -p $APP_HOME/src/main/java
+RUN mkdir -p $APP_HOME/src/main/resources
+RUN mkdir -p $APP_HOME/src/test/java
+RUN mkdir -p $APP_HOME/src/test/resources
+
 WORKDIR $APP_HOME
 COPY gradlew $APP_HOME
 COPY gradle $APP_HOME/gradle
@@ -12,8 +16,15 @@ COPY gradle $APP_HOME/gradle
 RUN ./gradlew --continue
 
 COPY build.gradle $APP_HOME
+
+# for cache all dependencies
+RUN touch "class GradleCache {}" > $APP_HOME/src/main/java/GradleCache.java
+RUN touch "name=value" > $APP_HOME/src/main/resources/gradlecache.properties
+RUN touch "class GradleCacheTest {}" > $APP_HOME/src/test/java/GradleCacheTest.java
+RUN touch "name=value" > $APP_HOME/src/test/resources/gradlecache.properties
+
 # download dependencies
-RUN ./gradlew build -x test --continue
+RUN ./gradlew build --continue
 
 ADD src $APP_HOME/src
 RUN ./gradlew build
