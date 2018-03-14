@@ -6,13 +6,16 @@ ENV APP_HOME=/root/dev/
 
 RUN mkdir -p $APP_HOME/src/main/java
 WORKDIR $APP_HOME
-COPY build.gradle gradlew $APP_HOME
+COPY gradlew $APP_HOME
 COPY gradle $APP_HOME/gradle
 # download gradle
-RUN ./gradlew clean
+RUN ./gradlew --continue
+
+COPY build.gradle $APP_HOME
 # download dependencies
 RUN ./gradlew build -x test --continue
-COPY src .
+
+ADD src $APP_HOME/src
 RUN ./gradlew build
 
 #############
