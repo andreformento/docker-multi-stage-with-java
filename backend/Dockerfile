@@ -12,7 +12,7 @@ COPY gradle $APP_HOME/gradle
 RUN ./gradlew clean
 # download dependencies
 RUN ./gradlew build -x test --continue
-COPY . .
+COPY src .
 RUN ./gradlew build
 
 #############
