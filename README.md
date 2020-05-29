@@ -2,12 +2,24 @@
 
 ### Requirements
 
-- `docker`
-- `docker-compose`
+- `docker` _(version 18.09 or newest)_
 
 ### How to do
 
-- Build and run: `docker-compose up --build`
+- Build
+```shell
+export BUILDKIT_PROGRESS=plain
+export DOCKER_BUILDKIT=1
+docker build -t andreformento/backend .
+```
+
+- Run
+```shell
+export BUILDKIT_PROGRESS=plain
+export DOCKER_BUILDKIT=1
+docker run --rm -p 8080:8080 andreformento/backend
+```
+
 - Get:
 
 ```
@@ -24,4 +36,5 @@ $ curl -X GET localhost:8080/products
 ]
 ```
 
-- Clean all: `docker-compose down -t 0`
+### References
+- https://docs.docker.com/develop/develop-images/build_enhancements/
