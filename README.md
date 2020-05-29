@@ -15,8 +15,6 @@ docker build -t andreformento/backend .
 
 - Run
 ```shell
-export BUILDKIT_PROGRESS=plain
-export DOCKER_BUILDKIT=1
 docker run --rm -p 8080:8080 andreformento/backend
 ```
 
