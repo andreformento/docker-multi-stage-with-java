@@ -22,8 +22,13 @@ docker run --rm -p 8080:8080 andreformento/backend
 
 - Get
 
+Request
+```shell
+curl -X GET localhost:8080/products
 ```
-$ curl -X GET localhost:8080/products
+
+Response
+```json
 [
    {
       "id":"ab1a3cd2-21cb-40ac-8e5c-14408e19b807",
