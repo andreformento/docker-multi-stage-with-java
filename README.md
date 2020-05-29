@@ -20,7 +20,7 @@ export DOCKER_BUILDKIT=1
 docker run --rm -p 8080:8080 andreformento/backend
 ```
 
-- Get:
+- Get
 
 ```
 $ curl -X GET localhost:8080/products
