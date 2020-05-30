@@ -9,6 +9,7 @@ version = '0.0.4-SNAPSHOT'
 sourceCompatibility = '14'
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 }
 
