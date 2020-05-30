@@ -15,7 +15,7 @@ docker build -t andreformento/backend .
 
 - Run
 ```shell
-docker run --rm -p 8080:8080 andreformento/backend
+docker run --rm -p 8080:8080 --name andreformento-backend andreformento/backend
 ```
 
 - Get
