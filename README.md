@@ -1,4 +1,4 @@
-# Java 14, Spring Boot 2, Docker multi-stage
+# Java 14, Spring Boot 2, Gradle, Docker multi-stage
 
 ### Requirements
 
