@@ -2,7 +2,7 @@
 
 #############
 # Build App
-FROM openjdk:9-slim as build
+FROM openjdk:14.0-jdk as build
 
 ENV APP_HOME=/root/
 
@@ -18,10 +18,10 @@ RUN --mount=type=cache,target=/root/.m2 \
 
 # #############
 # Final image
-FROM openjdk:9-slim
+FROM openjdk:14.0-jdk
 WORKDIR /root/
 COPY --from=build /root/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
-CMD ["java","-jar","app.jar"]
+CMD ["java","--enable-preview","-jar","app.jar"]

@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.1.RELEASE'
+		springBootVersion = '2.3.0.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -20,7 +20,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.formento'
 version = '0.0.3-SNAPSHOT'
-sourceCompatibility = 9
+sourceCompatibility = 14
 mainClassName = "com.formento.multistage.MultistageApplication"
 
 repositories {
@@ -36,4 +36,11 @@ dependencies {
 	
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')
+}
+
+compileJava {
+    options.compilerArgs += ["--enable-preview"]
+}
+test {
+    jvmArgs '--enable-preview'
 }

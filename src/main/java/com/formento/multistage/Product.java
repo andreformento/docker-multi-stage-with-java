@@ -1,20 +1,22 @@
 package com.formento.multistage;
 
-public class Product {
+record Product(String id, String title) {}
 
-    private final String id;
-    private final String title;
+// public class Product {
 
-    public Product(String id, String title) {
-        this.id = id;
-        this.title = title;
-    }
+//     private final String id;
+//     private final String title;
 
-    public String getId() {
-        return id;
-    }
+//     public Product(String id, String title) {
+//         this.id = id;
+//         this.title = title;
+//     }
 
-    public String getTitle() {
-        return title;
-    }
-}
+//     public String getId() {
+//         return id;
+//     }
+
+//     public String getTitle() {
+//         return title;
+//     }
+// }
