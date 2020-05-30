@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 @SpringBootApplication
 public class MultistageApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MultistageApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MultistageApplication.class, args);
+    }
 
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jacksonCustomizer(){

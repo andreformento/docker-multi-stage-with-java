@@ -1,7 +1,7 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.0.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-	id 'java'
+  id 'org.springframework.boot' version '2.3.0.RELEASE'
+  id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+  id 'java'
 }
 
 group = 'com.formento'
@@ -9,8 +9,8 @@ version = '0.0.4-SNAPSHOT'
 sourceCompatibility = '14'
 
 repositories {
-	mavenLocal()
-	mavenCentral()
+  mavenLocal()
+  mavenCentral()
 }
 
 dependencies {
@@ -22,10 +22,10 @@ dependencies {
 }
 
 compileJava {
-    options.compilerArgs += ["--enable-preview"]
+  options.compilerArgs += ["--enable-preview"]
 }
 
 test {
-    jvmArgs '--enable-preview'
-	useJUnitPlatform()
+  jvmArgs '--enable-preview'
+  useJUnitPlatform()
 }
