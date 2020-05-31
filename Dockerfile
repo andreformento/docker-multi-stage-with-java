@@ -19,15 +19,14 @@ RUN --mount=type=cache,target=/root/.m2 \
 # #############
 # Final image
 FROM openjdk:14.0-jdk
-WORKDIR /root/
-COPY --from=build /root/build/libs/*.jar app.jar
 
-# RUN cp /root/build/libs/*.jar app.jar
+WORKDIR /root/
+
+COPY --from=build /root/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
 CMD ["java", \
      "-XX:+UnlockExperimentalVMOptions", \
-     "--enable-preview", \
      "-jar", \
      "app.jar"]

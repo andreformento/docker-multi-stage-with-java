@@ -39,5 +39,11 @@ Response
 ]
 ```
 
+### VS Code
+
+Install [Remote development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack). Read more [here](https://code.visualstudio.com/docs/remote/containers)
+
 ### References
+
 - https://docs.docker.com/develop/develop-images/build_enhancements/
+- https://docs.oracle.com/cd/E22289_01/html/821-1274/configuring-the-default-jvm-and-java-arguments.html
